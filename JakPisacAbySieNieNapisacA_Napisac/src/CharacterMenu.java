@@ -3,6 +3,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.JLabel;
 
 public class CharacterMenu {
 
@@ -42,11 +46,14 @@ public class CharacterMenu {
 		
 		JPanel characterMenuWindow = new JPanel();
 		frame.getContentPane().add(characterMenuWindow, "characterMenuWindow");
-		characterMenuWindow.setLayout(null);
+		characterMenuWindow.setLayout(new MigLayout("", "[25.35%:50%][][25%:50%][][][][][]", "[25%:50%,grow][][25%:50.61%][][][][][]"));
+		
+		JButton btnNewButton = new JButton("New button");
+		characterMenuWindow.add(btnNewButton, "cell 1 1");
 		
 		JPanel characterInfoWindow = new JPanel();
 		frame.getContentPane().add(characterInfoWindow, "characterInfoWindow");
 		characterInfoWindow.setLayout(null);
-		characterMenuWindow.setVisible(false);
+		characterInfoWindow.setVisible(false);
 	}
 }
