@@ -4,11 +4,11 @@ public class Champion {
 	public String name;
 	
 	public Champion(){
-		this.baseStats=null;
+		this.baseStats = new BaseStats();
 		this.name="";
 	}
 	public Champion(String nam){
-		this.baseStats=null;
+		this.baseStats= new BaseStats();
 		this.name=nam;
 	}
 	
