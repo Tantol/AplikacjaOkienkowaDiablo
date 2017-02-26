@@ -7,6 +7,9 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class CharacterMenu {
 
@@ -49,7 +52,7 @@ public class CharacterMenu {
 		
 		JPanel characterMenuWindow = new JPanel();
 		frame.getContentPane().add(characterMenuWindow, "characterMenuWindow");
-		characterMenuWindow.setLayout(new MigLayout("", "[1%:50%][][][][][][][][1%:50%]", "[25%:50%,grow][][25%:50%]"));
+		characterMenuWindow.setLayout(new MigLayout("", "[1%:50%][][][][][][][][1%:50%]", "[25%:50%][30%][25%:50%][]"));
 		
 		JButton btnClass1 = new JButton("New button");
 		characterMenuWindow.add(btnClass1, "cell 1 1");
@@ -65,6 +68,9 @@ public class CharacterMenu {
 		characterMenuWindow.add(btnClass6, "cell 6 1");
 		JButton btnClass7 = new JButton("New button");
 		characterMenuWindow.add(btnClass7, "cell 7 1");
+		
+		JButton btnNewButton = new JButton("New button");
+		characterMenuWindow.add(btnNewButton, "cell 0 3");
 		
 		JPanel characterInfoWindow = new JPanel();
 		frame.getContentPane().add(characterInfoWindow, "characterInfoWindow");
