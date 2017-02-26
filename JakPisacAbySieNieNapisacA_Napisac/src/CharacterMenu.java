@@ -55,20 +55,20 @@ public class CharacterMenu {
 		characterMenuWindow.setLayout(new MigLayout("", "[1%:50%][][][][][][][][1%:50%]", "[25%:50%][30%][25%:50%][]"));
 		JButton btnClass1 = new JButton(champion.Amazon.getName());
 		characterMenuWindow.add(btnClass1, "cell 1 1");
-		JButton btnClass2 = new JButton("New button");
+		JButton btnClass2 = new JButton(champion.Assasin.getName());
 		characterMenuWindow.add(btnClass2, "cell 2 1");
-		JButton btnClass3 = new JButton("New button");
+		JButton btnClass3 = new JButton(champion.Necromancer.getName());
 		characterMenuWindow.add(btnClass3, "cell 3 1");
-		JButton btnClass4 = new JButton("New button");
+		JButton btnClass4 = new JButton(champion.Barbarian.getName());
 		characterMenuWindow.add(btnClass4, "cell 4 1");
-		JButton btnClass5 = new JButton("New button");
+		JButton btnClass5 = new JButton(champion.Paladin.getName());
 		characterMenuWindow.add(btnClass5, "cell 5 1");
-		JButton btnClass6 = new JButton("New button");
+		JButton btnClass6 = new JButton(champion.Sorceress.getName());
 		characterMenuWindow.add(btnClass6, "cell 6 1");
-		JButton btnClass7 = new JButton("New button");
+		JButton btnClass7 = new JButton(champion.Druid.getName());
 		characterMenuWindow.add(btnClass7, "cell 7 1");
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Exit");
 		characterMenuWindow.add(btnNewButton, "cell 0 3");
 		
 		JPanel characterInfoWindow = new JPanel();
