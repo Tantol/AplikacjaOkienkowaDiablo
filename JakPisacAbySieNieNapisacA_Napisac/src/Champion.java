@@ -13,5 +13,7 @@ public class Champion {
 	}
 	
 	public void setName(String setNam){this.name=setNam;}
+	
+	public String getName(){return name;}
 
 }
