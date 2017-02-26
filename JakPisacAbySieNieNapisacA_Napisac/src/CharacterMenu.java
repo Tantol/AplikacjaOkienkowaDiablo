@@ -1,5 +1,5 @@
 import java.awt.EventQueue;
-
+import java.awt.Dimension;
 import javax.swing.JFrame;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -40,16 +40,31 @@ public class CharacterMenu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setMinimumSize(new Dimension(800,400));	
+		frame.setBounds(100, 100, 950, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
+
+
 		
 		JPanel characterMenuWindow = new JPanel();
 		frame.getContentPane().add(characterMenuWindow, "characterMenuWindow");
-		characterMenuWindow.setLayout(new MigLayout("", "[25%:50%][][25%:50%]", "[25%:50%,grow][][25%:50%]"));
+		characterMenuWindow.setLayout(new MigLayout("", "[1%:50%][][][][][][][][1%:50%]", "[25%:50%,grow][][25%:50%]"));
 		
-		JButton btnNewButton = new JButton("New button");
-		characterMenuWindow.add(btnNewButton, "cell 1 1");
+		JButton btnClass1 = new JButton("New button");
+		characterMenuWindow.add(btnClass1, "cell 1 1");
+		JButton btnClass2 = new JButton("New button");
+		characterMenuWindow.add(btnClass2, "cell 2 1");
+		JButton btnClass3 = new JButton("New button");
+		characterMenuWindow.add(btnClass3, "cell 3 1");
+		JButton btnClass4 = new JButton("New button");
+		characterMenuWindow.add(btnClass4, "cell 4 1");
+		JButton btnClass5 = new JButton("New button");
+		characterMenuWindow.add(btnClass5, "cell 5 1");
+		JButton btnClass6 = new JButton("New button");
+		characterMenuWindow.add(btnClass6, "cell 6 1");
+		JButton btnClass7 = new JButton("New button");
+		characterMenuWindow.add(btnClass7, "cell 7 1");
 		
 		JPanel characterInfoWindow = new JPanel();
 		frame.getContentPane().add(characterInfoWindow, "characterInfoWindow");
