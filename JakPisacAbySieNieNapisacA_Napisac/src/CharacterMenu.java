@@ -95,6 +95,7 @@ public class CharacterMenu {
 		////
 		//Class Button 1
 		btnClass1.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
