@@ -49,12 +49,11 @@ public class CharacterMenu {
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 
 
-		
+		ChampionList champion = new ChampionList();
 		JPanel characterMenuWindow = new JPanel();
 		frame.getContentPane().add(characterMenuWindow, "characterMenuWindow");
 		characterMenuWindow.setLayout(new MigLayout("", "[1%:50%][][][][][][][][1%:50%]", "[25%:50%][30%][25%:50%][]"));
-		
-		JButton btnClass1 = new JButton("New button");
+		JButton btnClass1 = new JButton(champion.Amazon.getName());
 		characterMenuWindow.add(btnClass1, "cell 1 1");
 		JButton btnClass2 = new JButton("New button");
 		characterMenuWindow.add(btnClass2, "cell 2 1");
