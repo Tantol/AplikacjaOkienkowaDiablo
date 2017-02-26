@@ -41,12 +41,12 @@ public class CharacterMenu {
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 		
 		JPanel characterMenuWindow = new JPanel();
-		frame.getContentPane().add(characterMenuWindow, "name_52573747153300");
+		frame.getContentPane().add(characterMenuWindow, "characterMenuWindow");
 		characterMenuWindow.setLayout(null);
 		
 		JPanel characterInfoWindow = new JPanel();
-		frame.getContentPane().add(characterInfoWindow, "name_52642241986052");
+		frame.getContentPane().add(characterInfoWindow, "characterInfoWindow");
 		characterInfoWindow.setLayout(null);
+		characterMenuWindow.setVisible(false);
 	}
-
 }
