@@ -46,7 +46,7 @@ public class CharacterMenu {
 		
 		JPanel characterMenuWindow = new JPanel();
 		frame.getContentPane().add(characterMenuWindow, "characterMenuWindow");
-		characterMenuWindow.setLayout(new MigLayout("", "[25.35%:50%][][25%:50%][][][][][]", "[25%:50%,grow][][25%:50.61%][][][][][]"));
+		characterMenuWindow.setLayout(new MigLayout("", "[25%:50%][][25%:50%]", "[25%:50%,grow][][25%:50%]"));
 		
 		JButton btnNewButton = new JButton("New button");
 		characterMenuWindow.add(btnNewButton, "cell 1 1");
