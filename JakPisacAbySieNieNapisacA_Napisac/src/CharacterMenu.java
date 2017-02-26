@@ -48,7 +48,7 @@ public class CharacterMenu {
 		//Declarations
 		////
 		ChampionList champion = new ChampionList();
-		Champion player = new Champion();
+		User usr = new User();
 		////
 		//JFrame Setup
 		////
@@ -68,7 +68,7 @@ public class CharacterMenu {
 		////
 		JPanel characterInfoWindow = new JPanel();
 		frame.getContentPane().add(characterInfoWindow, "characterInfoWindow");
-		characterInfoWindow.setLayout(new MigLayout("", "[]", "[]"));
+		characterInfoWindow.setLayout(new MigLayout("", "[][][][][][]", "[][]"));
 		characterInfoWindow.setVisible(false);
 		////
 		//Character Buttons
@@ -95,10 +95,10 @@ public class CharacterMenu {
 		////
 		//Class Button 1
 		btnClass1.addMouseListener(new MouseAdapter() {
-			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
+				usr.setChampion("Amazon");
 			}
 		});
 		//Class Button 2
@@ -107,6 +107,7 @@ public class CharacterMenu {
 			public void mouseClicked(MouseEvent arg0) {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
+				usr.setChampion("Assasin");
 			}
 		});
 		//Class Button 3
@@ -115,6 +116,7 @@ public class CharacterMenu {
 			public void mouseClicked(MouseEvent arg0) {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
+				usr.setChampion("Necromancer");
 			}
 		});
 		//Class Button 4
@@ -123,6 +125,7 @@ public class CharacterMenu {
 			public void mouseClicked(MouseEvent arg0) {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
+				usr.setChampion("Barbarian");
 			}
 		});
 		//Class Button 5
@@ -131,6 +134,7 @@ public class CharacterMenu {
 			public void mouseClicked(MouseEvent arg0) {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
+				usr.setChampion("Paladin");
 			}
 		});
 		//Class Button 6
@@ -139,6 +143,7 @@ public class CharacterMenu {
 			public void mouseClicked(MouseEvent arg0) {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
+				usr.setChampion("Sorceress");
 			}
 		});
 		//Class Button 7
@@ -147,6 +152,7 @@ public class CharacterMenu {
 			public void mouseClicked(MouseEvent arg0) {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
+				usr.setChampion("Druid");
 			}
 		});
 		//Exit Button
@@ -157,6 +163,11 @@ public class CharacterMenu {
 				return;
 			}
 		});
+		////
+		//Character Info Content
+		////
+		JLabel lblNewLabel = new JLabel(usr.getChampion());
+		characterInfoWindow.add(lblNewLabel, "cell 5 1");
 		
 
 	}
