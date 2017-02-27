@@ -70,6 +70,8 @@ public class CharacterMenu {
 		frame.getContentPane().add(characterInfoWindow, "characterInfoWindow");
 		characterInfoWindow.setLayout(new MigLayout("", "[][][][][][]", "[][]"));
 		characterInfoWindow.setVisible(false);
+		JLabel lblNewLabel = new JLabel("test");
+		characterInfoWindow.add(lblNewLabel, "cell 5 1");
 		////
 		//Character Buttons
 		////
@@ -100,6 +102,7 @@ public class CharacterMenu {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
 				usr.setChampion("Amazon");
+				lblNewLabel.setText(usr.getChampion());
 			}
 		});
 		//Class Button 2
@@ -109,6 +112,7 @@ public class CharacterMenu {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
 				usr.setChampion("Assasin");
+				lblNewLabel.setText(usr.getChampion());
 			}
 		});
 		//Class Button 3
@@ -118,6 +122,7 @@ public class CharacterMenu {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
 				usr.setChampion("Necromancer");
+				lblNewLabel.setText(usr.getChampion());
 			}
 		});
 		//Class Button 4
@@ -127,6 +132,7 @@ public class CharacterMenu {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
 				usr.setChampion("Barbarian");
+				lblNewLabel.setText(usr.getChampion());
 			}
 		});
 		//Class Button 5
@@ -136,6 +142,7 @@ public class CharacterMenu {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
 				usr.setChampion("Paladin");
+				lblNewLabel.setText(usr.getChampion());
 			}
 		});
 		//Class Button 6
@@ -145,6 +152,7 @@ public class CharacterMenu {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
 				usr.setChampion("Sorceress");
+				lblNewLabel.setText(usr.getChampion());
 			}
 		});
 		//Class Button 7
@@ -154,6 +162,7 @@ public class CharacterMenu {
 				characterInfoWindow.setVisible(true);
 				characterMenuWindow.setVisible(false);
 				usr.setChampion("Druid");
+				lblNewLabel.setText(usr.getChampion());
 			}
 		});
 		//Exit Button
@@ -164,11 +173,6 @@ public class CharacterMenu {
 				return;
 			}
 		});
-		////
-		//Character Info Content
-		////
-		JLabel lblNewLabel = new JLabel(usr.getChampion());
-		characterInfoWindow.add(lblNewLabel, "cell 5 1");
 		
 
 	}
