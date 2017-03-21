@@ -1,18 +1,18 @@
 
 public class User {
 
-	public String champion;
+	public Champion champ;
 	
 	public User(){
-		this.champion = "Not Chosen";
+		champ=null;
 	}
 	
 	////
 	//Set
 	///
-	public void setChampion(String name){this.champion=name;}
+	public void setChampion(Champion champ){this.champ=champ;}
 	////
 	//Get
 	////
-	public String getChampion(){return this.champion;}
+	public Champion getChampion(){return this.champ;}
 }

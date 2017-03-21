@@ -19,6 +19,7 @@ public class CharacterMenu {
 	private JPanel characterInfoWindow, characterMenuWindow;
 	private User usr;
 	private JLabel lblNewLabel;
+	private ChampionList champion;
 
 	/**
 	 * Launch the application.
@@ -50,7 +51,7 @@ public class CharacterMenu {
 		////
 		//Declarations
 		////
-		ChampionList champion = new ChampionList();
+		champion = new ChampionList();
 		usr = new User();
 		////
 		//JFrame Setup
@@ -103,7 +104,7 @@ public class CharacterMenu {
 		btnClass1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				goToName(btnClass1.getText());
+				goToName(champion.Amazon);
 				
 			}
 		});
@@ -111,42 +112,42 @@ public class CharacterMenu {
 		btnClass2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				goToName(btnClass2.getText());
+				goToName(champion.Assasin);
 			}
 		});
 		//Class Button 3
 		btnClass3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				goToName(btnClass3.getText());
+				goToName(champion.Necromancer);
 			}
 		});
 		//Class Button 4
 		btnClass4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				goToName(btnClass4.getText());
+				goToName(champion.Barbarian);
 			}
 		});
 		//Class Button 5
 		btnClass5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				goToName(btnClass5.getText());
+				goToName(champion.Paladin);
 			}
 		});
 		//Class Button 6
 		btnClass6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				goToName(btnClass6.getText());
+				goToName(champion.Sorceress);
 			}
 		});
 		//Class Button 7
 		btnClass7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				goToName(btnClass7.getText());
+				goToName(champion.Druid);
 			}
 		});
 		//Exit Button
@@ -160,10 +161,11 @@ public class CharacterMenu {
 		
 
 	}
-	private void goToName(String name){
+	private void goToName(Champion name){
 		characterInfoWindow.setVisible(true);
 		characterMenuWindow.setVisible(false);
 		usr.setChampion(name);
-		lblNewLabel.setText(usr.getChampion());
+		//ToDo
+		lblNewLabel.setText(usr.getChampion().getName()+"  "+usr.getChampion().baseStats.getAdditionalInfo());
 	}
 }
