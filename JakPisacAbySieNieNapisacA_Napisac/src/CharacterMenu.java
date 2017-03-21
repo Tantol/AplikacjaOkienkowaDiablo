@@ -16,6 +16,9 @@ import java.awt.event.MouseEvent;
 public class CharacterMenu {
 
 	private JFrame frame;
+	private JPanel characterInfoWindow, characterMenuWindow;
+	private User usr;
+	private JLabel lblNewLabel;
 
 	/**
 	 * Launch the application.
@@ -48,7 +51,7 @@ public class CharacterMenu {
 		//Declarations
 		////
 		ChampionList champion = new ChampionList();
-		User usr = new User();
+		usr = new User();
 		////
 		//JFrame Setup
 		////
@@ -60,38 +63,39 @@ public class CharacterMenu {
 		////
 		//Character Menu Setup
 		////
-		JPanel characterMenuWindow = new JPanel();
+		characterMenuWindow = new JPanel();
 		frame.getContentPane().add(characterMenuWindow, "characterMenuWindow");
 		characterMenuWindow.setLayout(new MigLayout("", "[1%:50%][][][][][][][][1%:50%]", "[25%:50%][30%][25%:50%][]"));
 		////
 		//Character Info Setup
 		////
-		JPanel characterInfoWindow = new JPanel();
+		characterInfoWindow = new JPanel();
 		frame.getContentPane().add(characterInfoWindow, "characterInfoWindow");
 		characterInfoWindow.setLayout(new MigLayout("", "[][][][][][]", "[][]"));
 		characterInfoWindow.setVisible(false);
-		JLabel lblNewLabel = new JLabel("test");
+		lblNewLabel = new JLabel("test");
 		characterInfoWindow.add(lblNewLabel, "cell 5 1");
+		characterMenuWindow.setLayout(new MigLayout("", "[1px]", "[1px]"));
 		////
 		//Character Buttons
 		////
 		JButton btnClass1 = new JButton(champion.Amazon.getName());
-		characterMenuWindow.add(btnClass1, "cell 1 1");
+		characterMenuWindow.add(btnClass1, "cell 0 0,grow");
 		JButton btnClass2 = new JButton(champion.Assasin.getName());
-		characterMenuWindow.add(btnClass2, "cell 2 1");
+		characterMenuWindow.add(btnClass2, "cell 0 0,grow");
 		JButton btnClass3 = new JButton(champion.Necromancer.getName());
-		characterMenuWindow.add(btnClass3, "cell 3 1");
+		characterMenuWindow.add(btnClass3, "cell 0 0,grow");
 		JButton btnClass4 = new JButton(champion.Barbarian.getName());
-		characterMenuWindow.add(btnClass4, "cell 4 1");
+		characterMenuWindow.add(btnClass4, "cell 0 0,grow");
 		JButton btnClass5 = new JButton(champion.Paladin.getName());
-		characterMenuWindow.add(btnClass5, "cell 5 1");
+		characterMenuWindow.add(btnClass5, "cell 0 0,grow");
 		JButton btnClass6 = new JButton(champion.Sorceress.getName());
-		characterMenuWindow.add(btnClass6, "cell 6 1");
+		characterMenuWindow.add(btnClass6, "cell 0 0,grow");
 		JButton btnClass7 = new JButton(champion.Druid.getName());
-		characterMenuWindow.add(btnClass7, "cell 7 1");
+		characterMenuWindow.add(btnClass7, "cell 0 0,grow");
 		
 		JButton btnExit = new JButton("Exit");
-		characterMenuWindow.add(btnExit, "cell 0 3");
+		characterMenuWindow.add(btnExit, "cell 0 0,grow");
 		////
 		// Listeners For Character Menu
 		////
@@ -99,70 +103,50 @@ public class CharacterMenu {
 		btnClass1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				characterInfoWindow.setVisible(true);
-				characterMenuWindow.setVisible(false);
-				usr.setChampion("Amazon");
-				lblNewLabel.setText(usr.getChampion());
+				goToName(btnClass1.getText());
+				
 			}
 		});
 		//Class Button 2
 		btnClass2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				characterInfoWindow.setVisible(true);
-				characterMenuWindow.setVisible(false);
-				usr.setChampion("Assasin");
-				lblNewLabel.setText(usr.getChampion());
+				goToName(btnClass2.getText());
 			}
 		});
 		//Class Button 3
 		btnClass3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				characterInfoWindow.setVisible(true);
-				characterMenuWindow.setVisible(false);
-				usr.setChampion("Necromancer");
-				lblNewLabel.setText(usr.getChampion());
+				goToName(btnClass3.getText());
 			}
 		});
 		//Class Button 4
 		btnClass4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				characterInfoWindow.setVisible(true);
-				characterMenuWindow.setVisible(false);
-				usr.setChampion("Barbarian");
-				lblNewLabel.setText(usr.getChampion());
+				goToName(btnClass4.getText());
 			}
 		});
 		//Class Button 5
 		btnClass5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				characterInfoWindow.setVisible(true);
-				characterMenuWindow.setVisible(false);
-				usr.setChampion("Paladin");
-				lblNewLabel.setText(usr.getChampion());
+				goToName(btnClass5.getText());
 			}
 		});
 		//Class Button 6
 		btnClass6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				characterInfoWindow.setVisible(true);
-				characterMenuWindow.setVisible(false);
-				usr.setChampion("Sorceress");
-				lblNewLabel.setText(usr.getChampion());
+				goToName(btnClass6.getText());
 			}
 		});
 		//Class Button 7
 		btnClass7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				characterInfoWindow.setVisible(true);
-				characterMenuWindow.setVisible(false);
-				usr.setChampion("Druid");
-				lblNewLabel.setText(usr.getChampion());
+				goToName(btnClass7.getText());
 			}
 		});
 		//Exit Button
@@ -175,5 +159,11 @@ public class CharacterMenu {
 		});
 		
 
+	}
+	private void goToName(String name){
+		characterInfoWindow.setVisible(true);
+		characterMenuWindow.setVisible(false);
+		usr.setChampion(name);
+		lblNewLabel.setText(usr.getChampion());
 	}
 }
